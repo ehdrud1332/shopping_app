@@ -3,6 +3,7 @@ import {View, Text} from 'react-native';
 import * as Font from 'expo-font';
 import {AppLoading} from 'expo';
 import {Asset} from 'expo-asset';
+import Navigator from "./navigation/Navigator";
 
 const cacheImages = images =>
     images.map(image => {
@@ -32,11 +33,7 @@ const App = () => {
     const onFinish = () => setIsReady(true);
 
     return isReady ? (
-        <View>
-          <Text>
-            asdfasdf
-          </Text>
-        </View>
+        <Navigator/>
     ) : (
         <AppLoading
             startAsync={loadAssets}
