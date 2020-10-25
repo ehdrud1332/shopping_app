@@ -2,7 +2,10 @@ import React from 'react';
 import {View, Text, Image, TouchableOpacity, StyleSheet, ImageBackground} from 'react-native';
 import {MaterialCommunityIcons, Ionicons} from '@expo/vector-icons';
 import {ScrollView, TextInput} from 'react-native-gesture-handler';
+import Stars from 'react-native-stars';
+
 import SwiperComponent from "../components/SwiperComponent";
+import SmallPoster from "../components/SmallPoster";
 
 const Detail = ({navigation}) => {
     return (
@@ -95,7 +98,134 @@ const Detail = ({navigation}) => {
                     }}
                 />
             </View>
-            
+
+            <View style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                marginTop: 20,
+                width: '100%'
+            }}>
+                <View style={{
+                    width: '65%'
+                }}>
+                    <Text style={{
+                        fontWeight: '800',
+                        fontSize: 18,
+                        color: '#4f4a4a'
+                    }}>
+                        Autobe Best Chair
+                    </Text>
+                </View>
+                <View style={{
+                    width: '35%'
+                }}>
+                    <Text style={{
+                        fontWeight: '700',
+                        fontSize: 9,
+                        color: '#4f4a4a'
+                    }}>
+                        Customers Rating
+                    </Text>
+                    <View style={{
+                        alignItems: 'center',
+                        flexDirection: 'row'
+                    }}>
+                        <Stars
+                            default={4}
+                            count={5}
+                            half={true}
+                            starSize={20}
+                            fullStar={<MaterialCommunityIcons name='star' style={[styles.myStarStyle]}/>}
+                            emptyStar={<MaterialCommunityIcons name='star-outline' style={[styles.myStarStyle, styles.myEmptyStarStyle]}/>}
+                            halfStar={<MaterialCommunityIcons name='star-half' style={[styles.myStarStyle]}/>}
+                        />
+                        <Text style={{
+                            fontSize: 8,
+                            fontWeight: '600',
+                            marginHorizontal: 5,
+                            paddingTop: 4,
+                            color: '#b3aeae'
+                        }}>
+                            84 Reviews
+                        </Text>
+                    </View>
+                </View>
+            </View>
+            <Text style={{
+                fontWeight: '600',
+                fontSize: 16,
+                color: '#b3aeae'
+            }}>
+                $324,69
+            </Text>
+            <Text style={{
+                fontWeight: '600',
+                fontSize: 14,
+                lineHeight: 28,
+                color: '#b3aeae',
+                marginTop: 20
+            }}>
+                Full sleeves short dress with three attractive colors and and available in various sizes.
+            </Text>
+
+            <ScrollView
+                style={{margin: 30}}
+                horizontal
+                showsHorizontalScrollIndicator={false}
+            >
+                <View style={{
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    backgroundColor: '#f5f6fb',
+                    height: 80,
+                    width: 80,
+                    borderRadius: 25,
+                    marginRight: 20
+                }}>
+                    <Image
+                        source={require('../assets/images/12.png')}
+                        style={{height: 80, width: 80}}
+                    />
+                </View>
+                <SmallPoster
+                    src={require('../assets/images/13.png')}
+                />
+                <SmallPoster
+                    src={require('../assets/images/14.png')}
+                />
+                <SmallPoster
+                    src={require('../assets/images/15.png')}
+                />
+                <SmallPoster
+                    src={require('../assets/images/12.png')}
+                />
+                <SmallPoster
+                    src={require('../assets/images/13.png')}
+                />
+            </ScrollView>
+
+            <View style={{
+                backgroundColor: '#000',
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderRadius: '10',
+                padding: 12,
+                marginBottom: 40
+            }}>
+                <Image
+                    source={require('../assets/images/bag.png')}
+                    style={{height: 20, width: 16}}
+                />
+                <Text style={{
+                    fontSize: 20,
+                    color: '#fff',
+                    fontWeight: '600',
+                    marginHorizontal: 15
+                }}>
+                    Add to Cart
+                </Text>
+            </View>
         </View>
     );
 };
